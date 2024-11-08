@@ -4,100 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Berbagi Jawaban</title>
-    <style>
-        /* Gaya Umum */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
-        }
-
-        /* Header */
-        header {
-            background-color: #0073e6;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2em;
-        }
-
-        /* Kontainer Utama */
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 20px auto;
-        }
-
-        /* Form Input Jawaban */
-        .answer-form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .answer-form h2 {
-            margin-bottom: 10px;
-            font-size: 1.5em;
-        }
-
-        .answer-form input, .answer-form textarea, .answer-form button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-
-        .answer-form button {
-            background-color: #0073e6;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            font-size: 1.1em;
-            transition: background-color 0.3s;
-        }
-
-        .answer-form button:hover {
-            background-color: #005bb5;
-        }
-
-        /* Daftar Jawaban */
-        .answers-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .answers-list .answer-item {
-            background-color: #fff;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .answers-list .answer-item h3 {
-            font-size: 1.2em;
-            color: #0073e6;
-        }
-
-        .answers-list .answer-item p {
-            margin-top: 10px;
-            font-size: 1em;
-            line-height: 1.6;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -107,16 +14,14 @@
     </header>
 
     <div class="container">
-        <!-- Form untuk mengirim jawaban -->
         <div class="answer-form">
             <h2>Kirim Jawaban Baru</h2>
-            <input type="text" placeholder="Judul Pertanyaan" required>
-            <textarea placeholder="Tulis jawaban Anda di sini..." rows="5" required></textarea>
-            <button>Kirim Jawaban</button>
+            <input type="text" id="questionTitle" placeholder="Judul Pertanyaan" required>
+            <textarea id="answerContent" placeholder="Tulis jawaban Anda di sini..." rows="5" required></textarea>
+            <button onclick="addAnswer()">Kirim Jawaban</button>
         </div>
 
-        <!-- Daftar jawaban yang ada -->
-        <ul class="answers-list">
+        <ul class="answers-list" id="answersList">
             <li class="answer-item">
                 <h3>Contoh Judul Pertanyaan</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel pulvinar magna, vel congue elit.</p>
@@ -128,5 +33,6 @@
         </ul>
     </div>
 
+    <script src="script.js"></script>
 </body>
-  </html>
+        </html>
